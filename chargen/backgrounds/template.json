@@ -1,0 +1,19 @@
+{
+    "trait": [
+    
+    ],
+    "ideal" : {
+        "good": [""],
+        "evil": [""],
+        "lawful": [""],
+        "chaotic": [""],
+        "neutral": [""],
+        "any": [""]        
+    },
+    "bond": [
+
+    ],
+    "flaw": [
+        
+    ]
+}
