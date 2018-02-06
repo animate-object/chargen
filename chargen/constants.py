@@ -1,4 +1,6 @@
-#i -------------------------------------------------------- #
+from itertools import product
+
+# -------------------------------------------------------- #
 #   class constants
 # ------------------
 #   there are 12 character classes, all specified in the DMG
@@ -231,3 +233,9 @@ SUBCLASSES_BY_CLASS = {
     class_: CORE_SUBCLASSES_BY_CLASS[class_] + XAN_SUBCLASSES_BY_CLASS[class_]
     for class_ in CLASSES
 }
+
+
+LAW_VS_CHAOS = ['Lawful', 'Neutral', 'Chaotic']
+GOOD_VS_EVIL = ['Good', 'Neutral', 'Evil']
+ALIGNMENTS = product(LAW_VS_CHAOS, GOOD_VS_EVIL)
+
