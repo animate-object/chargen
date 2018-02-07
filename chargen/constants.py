@@ -1,4 +1,9 @@
 from itertools import product
+from os.path import join
+from re import sub
+from json import load
+
+from paths import CHARGEN_DIR
 
 # -------------------------------------------------------- #
 #   class constants
@@ -235,7 +240,17 @@ SUBCLASSES_BY_CLASS = {
 }
 
 
-LAW_VS_CHAOS = ['Lawful', 'Neutral', 'Chaotic']
-GOOD_VS_EVIL = ['Good', 'Neutral', 'Evil']
-ALIGNMENTS = product(LAW_VS_CHAOS, GOOD_VS_EVIL)
+LAW_VS_CHAOS = ['lawful', 'neutral', 'chaotic']
+GOOD_VS_EVIL = ['good', 'neutral', 'evil']
+ALIGNMENTS = list(product(LAW_VS_CHAOS, GOOD_VS_EVIL))
+
+def _get_all_background_data():
+    def _read_background_file(background):
+        fp = join(CHARGEN_DIR, 'backgrounds', '{}.json'.format(sub(r'[\-\s]', '_', background)))
+        with open(fp, 'r') as data_in:
+            return load(data_in)
+    return {bg: _read_background_file(bg) for bg in BACKGROUNDS}
+
+    
+BACKGROUND_DATA = _get_all_background_data()
 
