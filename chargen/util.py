@@ -1,4 +1,5 @@
-from random import randint
+from random import randint, choice
+
 
 def roll_on_table(table, roll=None):
     """ Allows rolling on a table like those defined in DnD material

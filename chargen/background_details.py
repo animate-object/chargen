@@ -36,7 +36,7 @@ def ideal_from_alignment(ideals, alignment):
     """ Get one of the ideals matching the provided alignment tuple
     Alignment is assumed to be a 2-ple of form (<lawful - chaotic>, <good - evil>)
     """
-    applicable_alignment = ['any'] + list(alignment)
+    applicable_alignment = ['any'] + list(alignment) + list(alignment)  # weighting alignment
     shuffle(applicable_alignment)
     for val in applicable_alignment:
         try:

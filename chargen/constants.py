@@ -40,7 +40,7 @@ BUGBEAR = 'bugbear'
 DWARF = 'dwarf'
 DRAGONBORN = 'dragonborn'
 ELF = 'elf'
-FIRBOLGS = 'firbolgs'
+FIRBOLGS = 'firbolg'
 HALFLING = 'halfling'
 HALF_ELF = 'half-elf'
 HALF_ORC = 'half-orc'
@@ -241,8 +241,12 @@ SUBCLASSES_BY_CLASS = {
 
 
 LAW_VS_CHAOS = ['lawful', 'neutral', 'chaotic']
-GOOD_VS_EVIL = ['good', 'neutral', 'evil']
+GOOD_VS_EVIL = ['good', 'neutral', 'evil']  # weighting good, more appropriate for most PCs
 ALIGNMENTS = list(product(LAW_VS_CHAOS, GOOD_VS_EVIL))
+
+MALE, FEMALE = 'male', 'female'
+SEXES = [MALE, FEMALE]
+
 
 def _get_all_background_data():
     def _read_background_file(background):
